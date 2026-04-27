@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Scientific Calculator</title>
+
+  <link rel="stylesheet" href="style.css">
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/11.8.0/math.min.js"></script>
+</head>
+<body>
+
+<div class="container">
+  
+  <div class="calculator">
+
+    <div class="top-bar">
+      <button class="top-btn" onclick="toggleTheme()">🌙 Dark</button>
+
+      <div class="top-right">
+        <button class="top-btn" onclick="startVoice()">🎤 Voice</button>
+        <button class="top-btn">⌨ Keyboard</button>
+        <button class="top-btn" onclick="toggleHistory()">🕘 History</button>
+      </div>
+    </div>
+
+    
+    <div class="display-box">
+      <div id="expression"></div>
+      <div id="result">0</div>
+    </div>
+
+   
+    <div class="button-grid">
+
+      <button onclick="append('pi')">π</button>
+      <button onclick="append('e')">e</button>
+      <button onclick="append('sin(')">sin</button>
+      <button onclick="append('cos(')">cos</button>
+      <button onclick="append('tan(')">tan</button>
+      <button onclick="append('%')">%</button>
+      <button class="yellow" onclick="append('/')">÷</button>
+
+      <button onclick="append('sqrt(')">√</button>
+      <button onclick="append('cbrt(')">∛</button>
+      <button onclick="append('^')">xʸ</button>
+      <button onclick="append('^2')">x²</button>
+      <button onclick="append('1/')">1/x</button>
+      <button onclick="append('!')">x!</button>
+      <button class="yellow" onclick="append('*')">×</button>
+
+      <button onclick="append('log(')">log</button>
+      <button onclick="append('ln(')">ln</button>
+      <button onclick="append('exp(')">EXP</button>
+      <button onclick="append('mod')">Mod</button>
+      <button onclick="append('(')">(</button>
+      <button onclick="append(')')">)</button>
+      <button class="yellow" onclick="append('-')">−</button>
+
+      <button onclick="append('7')">7</button>
+      <button onclick="append('8')">8</button>
+      <button onclick="append('9')">9</button>
+      <button onclick="append('4')">4</button>
+      <button onclick="append('5')">5</button>
+      <button onclick="append('6')">6</button>
+      <button class="yellow" onclick="append('+')">+</button>
+
+      <button onclick="append('1')">1</button>
+      <button onclick="append('2')">2</button>
+      <button onclick="append('3')">3</button>
+      <button onclick="append('0')">0</button>
+      <button onclick="append('.')">.</button>
+      <button onclick="backspace()">⌫</button>
+      <button class="yellow" onclick="calculate()">=</button>
+
+      <button class="bottom-btn" onclick="startVoice()">🎤 Voice</button>
+      <button class="bottom-btn" onclick="openGraph()">📈 Graph</button>
+      <button class="bottom-btn" onclick="clearHistory()">🗑 Clear History</button>
+
+    </div>
+
+  </div>
+
+  
+  <div class="history-panel" id="historyPanel">
+
+    <div class="history-header">
+      <h2>History</h2>
+      <button onclick="toggleHistory()">✕</button>
+    </div>
+
+    <div id="historyList"></div>
+
+    <button class="history-clear" onclick="clearHistory()">
+      🗑 Clear History
+    </button>
+
+  </div>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
